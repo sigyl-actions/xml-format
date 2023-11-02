@@ -2,8 +2,8 @@ const { promises: fs } = require('fs');
 const path = require('path')
 
 const core = require('@actions/core');
-const xmlPretty = require('xml-but-prettier');
-const xmlFormatter = require('xml-formatter');
+// const xmlFormatter = require('xml-formatter');
+var convert = require('xml-js');
 
 
 async function run() {
@@ -40,12 +40,15 @@ async function run() {
           )
             .map(
               (filePath) => fs.readFile(
-                filePath
+                filePath,
+                'utf8',
               ).then(
                 (buffer) => ({
                   filePath,
-                  xml: xmlFormatter(
-                    buffer.toString(),
+                  xml: convert.json2xml(
+                    convert.xml2json(
+                      buffer,
+                    ),
                   ),
                 }),
               ),
