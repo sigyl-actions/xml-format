@@ -28370,6 +28370,7 @@ async function run() {
                     convert.xml2json(
                       buffer,
                     ),
+                    { spaces: 2 }
                   ),
                 }),
               ),
