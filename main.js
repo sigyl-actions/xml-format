@@ -3,6 +3,7 @@ const path = require('path')
 
 const core = require('@actions/core');
 const xmlPretty = require('xml-but-prettier');
+const xmlFormatter = require('xml-formatter');
 
 
 async function run() {
@@ -43,7 +44,7 @@ async function run() {
               ).then(
                 (buffer) => ({
                   filePath,
-                  xml: xmlPretty(
+                  xml: xmlFormatter(
                     buffer.toString(),
                   ),
                 }),
