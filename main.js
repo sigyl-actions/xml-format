@@ -61,6 +61,8 @@ async function run() {
               }) => fs.writeFile(
                 filePath,
                 xml,
+              ).then(
+                () => console.log(xml),
               )
             )
         )
