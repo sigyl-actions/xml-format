@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "xml-but-prettier": "^1.0.1"
+    "xml-but-prettier": "^1.0.1",
+    "xml-formatter": "^3.6.0",
+    "xml-js": "^1.6.11"
   }
 }
